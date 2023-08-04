@@ -6,6 +6,7 @@ import sys
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
 from tkinter import simpledialog
+from tkinter.messagebox import *
 
 packet_count = 0
 
@@ -23,6 +24,7 @@ def attack(target_ip, target_port):
         enumerate_packets()
 
 def toggle_attack():
+    showinfo(title="Information",message="Successfully initalized attack script.")
     if start_button["text"] == "Start Attack":
         start_button["text"] = "Stop Attack"
         target_ip = simpledialog.askstring("Target IP", "Enter the target IP:")
@@ -54,5 +56,6 @@ num_threads_entry.pack()
 speed_label = tk.Label(root, text="Attacking Speed: --- packets per second")
 speed_label.pack()
 
+showwarning(title="Warning",message="Author: JieJiaoDeMao-wjz\n\nPlease read the agreements carefully before you close this prompt window, which means you accept the agreements:\n\nIf you get this software by buying, sharing with any unauthorized user isn't allowed.\n\nThis software is only used for operating system network stress testing.\nUsing this software for any illegal use is strictly forbidden.\nIf the user of this software is punished for the misuse of this software, the author isn't responsible for any support.\nPlease make sure your operating environment is safe and legal.\nHere you go!")
 
 root.mainloop()
